@@ -34,9 +34,9 @@ namespace Home_task_1_2
         void FindLongestLine()
         {
             int lineCounter = 0;
+
             foreach (var Line in Lines)
             {
-                //var numbers = Line.Split(' ');
                 var line = Line?.Split(' ').Select(Int32.Parse).ToList();
                 int currentColor = -1;
                 int length = 0;
@@ -58,6 +58,7 @@ namespace Home_task_1_2
                     }
                 if (length > _maxLineLength)
                     AddMaxLineStats(currentColor, length, xStart, line.Count - 1, lineCounter);
+
                 lineCounter++;
             }
         }
@@ -71,11 +72,13 @@ namespace Home_task_1_2
             for (int line = 0; line < height; line++)
             {
                 StringBuilder sb = new StringBuilder();
+
                 for (int i = 0; i < width; i++)
                 {
                     int randomNum = rand.Next(0, 17);
                     sb.Append(randomNum.ToString() + " ");
                 }
+
                 string s = sb.ToString().Remove(sb.Length -1);
                 Lines.Add(s);
             }
