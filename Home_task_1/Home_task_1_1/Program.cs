@@ -1,5 +1,5 @@
 ﻿using Home_task_1_1;
-
+//Вітаю. Перше завдання по створенню репозиторію Ви виконали.
 try
 {
     var values = Console.ReadLine().Split().Select(s => int.Parse(s)).ToList();
